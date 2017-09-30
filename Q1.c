@@ -50,7 +50,32 @@ void output(struct student* students){
 
 void summary(struct student* students){
      /*Compute and print the minimum, maximum and average scores of the ten students*/
-     
+  int min, max;    // to hold min, max values
+  float sum = 0.0;     // to hold sum of all scores
+  float average = 0.0;    // to hold average score
+  int index;
+  for (index = 0; index < NUMSTUDENTS; index++) {
+    if (index == 0) {
+      min = max = students[index].score;
+    }
+
+    if (students[index].score < min) {
+      min = students[index].score;
+    }
+
+    if (students[index].score > max) {
+      max = students[index].score;
+    }    
+
+    sum += students[index].score;
+
+  }
+
+  average = sum/NUMSTUDENTS;
+
+  printf("Minimum Score = %d\n", min);
+  printf("Maximum Score = %d\n", max);
+  printf("Average Score = %.2f\n\n", average);
 }
 
 void deallocate(struct student* stud){
