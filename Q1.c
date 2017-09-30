@@ -27,11 +27,20 @@ void generate(struct student* students){
      /*Generate random and unique ID and scores for ten students, ID being between 1 and 10, scores between 0 and 100*/
      int x;
      for (x = 0; x < NUMSTUDENTS; x++) {
-      int randNum = (rand() % 10) + 1;  // random # between 1 and 10 
+      // int randNum = (rand() % 10) + 1;  // random # between 1 and 10 
       int randScore = (rand() % 100) + 1;  //random # between 1 and 100 
-      students[x].id = randNum;       // set student[x] id
+      students[x].id = x + 1;       // set student[x] id
       students[x].score = randScore;  // set student[x] score
      }
+
+     // randomize student id's
+     for (x = NUMSTUDENTS - 1; x > 0; x--) {
+      int j =  rand() % (x + 1); //select random index
+      int temp = students[x].id; //swap positions
+      students[x].id = students[j].id;
+      students[j].id = temp;
+     }
+
 }
 
 void output(struct student* students){
@@ -42,10 +51,11 @@ void output(struct student* students){
               ...
               ID10 score10*/
     int x;
+    printf("\nIDs\tScores\n\n");
     for (x = 0; x < NUMSTUDENTS; x++) {
       printf("%3d\t%4d\n", students[x].id, students[x].score);
     }   
-
+    printf("\n");
 }
 
 void summary(struct student* students){
@@ -80,6 +90,7 @@ void summary(struct student* students){
 
 void deallocate(struct student* stud){
      /*Deallocate memory from stud*/
+  free(stud);
 }
 
 int main(){
