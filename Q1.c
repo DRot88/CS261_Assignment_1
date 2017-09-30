@@ -5,23 +5,33 @@
  */
  
 #include <stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 
 struct student{
 	int id;
 	int score;
 };
 
+const int NUMSTUDENTS = 10;
+
 struct student* allocate(){
      /*Allocate memory for ten students*/
-     
+     struct student* students = malloc(NUMSTUDENTS * sizeof(struct student*));
      /*return the pointer*/
+     return students;
 }
 
 void generate(struct student* students){
      /*Generate random and unique ID and scores for ten students, ID being between 1 and 10, scores between 0 and 100*/
-     
+     int x;
+     for (x = 0; x < NUMSTUDENTS; x++) {
+      int randNum = (rand() % 10) + 1;  // random # between 1 and 10 
+      int randScore = (rand() % 100) + 1;  //random # between 1 and 100 
+      students[x].id = randNum;       // set student[x] id
+      students[x].score = randScore;  // set student[x] score
+     }
 }
 
 void output(struct student* students){
@@ -31,6 +41,11 @@ void output(struct student* students){
               ID3 score3
               ...
               ID10 score10*/
+    int x;
+    for (x = 0; x < NUMSTUDENTS; x++) {
+      printf("%3d\t%4d\n", students[x].id, students[x].score);
+    }   
+
 }
 
 void summary(struct student* students){
@@ -44,16 +59,17 @@ void deallocate(struct student* stud){
 
 int main(){
     struct student* stud = NULL;
+    srand(time(0));
     
     /*call allocate*/
-    
+    struct student* students = allocate();
     /*call generate*/
-    
+    generate(students);
     /*call output*/
-    
+    output(students);
     /*call summary*/
-    
+    summary(students);
     /*call deallocate*/
-
+    deallocate(students);
     return 0;
 }
