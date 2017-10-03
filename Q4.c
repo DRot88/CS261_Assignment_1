@@ -75,6 +75,11 @@ int main(){
       printf("%3d\t%4d\n", students[i].id, students[i].score);
     }   
     printf("\n");
+
+    if (students !=0)
+    {
+        free(students);
+    }
     
     return 0;
 }

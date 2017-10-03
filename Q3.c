@@ -56,5 +56,9 @@ int main(){
       printf("Array[%d]: %d\n", x, array[x]);
     }
 
+    if (array != 0) {
+      free(array);
+    }
+
     return 0;
 }
