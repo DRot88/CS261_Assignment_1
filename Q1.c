@@ -92,7 +92,9 @@ void summary(struct student* students){
 
 void deallocate(struct student* stud){
      /*Deallocate memory from stud*/
-  free(stud);
+  if (stud != 0) {
+    free(stud);
+  }
 }
 
 int main(){
