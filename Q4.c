@@ -1,6 +1,6 @@
 /* CS261- Assignment 1 - Q.4*/
-/* Name:
- * Date:
+/* Name: Daniel Rotenberg
+ * Date: 10/1/2017
  * Solution description:
  */
  
