@@ -1,7 +1,10 @@
 /* CS261- Assignment 1 - Q.2*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Daniel Rotenberg
+ * Date: 10/01/2017
+ * Solution description: This program creates three integer variables, represented by 'x', 'y', and 'z'
+                        each being assined with 5,6,7 respectively. They are then passed to the function
+                        'foo' - 2 by reference, 1 by value, and then reprints the new results
+                        to the screen. Only the integer passed by value remains the same.
  */
  
 #include <stdio.h>

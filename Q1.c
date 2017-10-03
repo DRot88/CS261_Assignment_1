@@ -1,7 +1,9 @@
 /* CS261- Assignment 1 - Q.1*/
 /* Name: Daniel Rotenberg
  * Date: 09/29/2017
- * Solution description:
+ * Solution description: This program creates an array of students, populates the array with
+                        random and unique ID's and random test scores. It then calculates 
+                        the max, min, and average scores and prints this to the screen.
  */
  
 #include <stdio.h>

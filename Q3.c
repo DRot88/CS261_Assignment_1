@@ -1,7 +1,9 @@
 /* CS261- Assignment 1 - Q.3*/
-/* Name:
- * Date:
- * Solution description:
+/* Name: Daniel Rotenberg
+ * Date: 10/01/2017
+ * Solution description: This program creates an array of 20 integers and assigns them 
+                          random numbers (I set it between 1-1000) and outputs these to
+                          the console. It then sorts the array and reprints it.
  */
  
 #include <stdio.h>

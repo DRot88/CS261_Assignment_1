@@ -1,7 +1,9 @@
 /* CS261- Assignment 1 - Q.4*/
 /* Name: Daniel Rotenberg
  * Date: 10/1/2017
- * Solution description:
+ * Solution description: This program takes an array of 10 students, all given 
+                unique ID's and random scores. It then sorts the students in
+                order of test scores and outputs this to the screen.
  */
  
 #include <stdio.h>
